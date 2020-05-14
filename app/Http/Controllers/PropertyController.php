@@ -31,6 +31,24 @@ class PropertyController extends Controller
         return \App\Property::create($params);
     }
 
+    public function get_analytics($id)
+    {
+        $property = \App\Property::findOrFail($id);
+        $result = [];
+        foreach ($property->analytics as $analytic) {
+            $tmp = [
+                'id' => $analytic->id,
+                'name' => $analytic->name,
+                'units' => $analytic->units,
+                'is_numeric' => $analytic->is_numeric,
+                'num_decimal_places' => $analytic->num_decimal_places,
+                'value' => $analytic->pivot->value,
+            ];
+            $result []= $tmp;
+        }
+        return $result;
+    }
+
     public function add_analytic($property_id, $analytic_id, Request $request)
     {
         $value = $request->input('value');

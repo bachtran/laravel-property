@@ -35,6 +35,11 @@ Route::prefix('properties')->group(function () {
     Route::post('/', 'PropertyController@store');
 
     /*
+     * Get property's analytics
+     */
+    Route::get('/{id}/analytics', 'PropertyController@get_analytics');
+
+    /*
      * Add or update analytic to a property
      */
     Route::post('/{property_id}/analytics/{analytic_id}', 'PropertyController@add_analytic');
