@@ -1,5 +1,5 @@
 ## Intro
-This is an application built with Laravel that provide a number of API endpoints to the datasets in the CSV files
+This is an application built with Laravel that provides a number of API endpoints to the datasets in the CSV files
 in `storage/app/`:
 
 - `/api/properties` POST json object `{"guid": "1234", "suburb": "Sydney", "state": "NSW", "country": "Australia"}` 
