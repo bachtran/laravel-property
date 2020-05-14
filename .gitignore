@@ -5,7 +5,6 @@
 /vendor
 .idea/
 .env
-bk.env.testing
 .env.backup
 .phpunit.result.cache
 Homestead.json
